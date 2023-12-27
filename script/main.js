@@ -31,7 +31,7 @@ const createSymbol = (num) => {
 
 window.addEventListener('load', ()=>{
     createSymbol(30);
-    setTimeout(removeSymbol,20000);
+    // setTimeout(removeSymbol,20000);
 });
 
 const removeSymbol = ()=>{
@@ -41,7 +41,7 @@ const removeSymbol = ()=>{
     },500);
 };
 
-symbolContainer.addEventListener('click',function(){
-    removeSymbol();
-});
+// symbolContainer.addEventListener('click',function(){
+//     removeSymbol();
+// });
 

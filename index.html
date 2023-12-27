@@ -4,15 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박서영 포트폴리오</title>
-    <link rel="stylesheet" href="./style.css">
+
+    <!-- ogp -->
+	<meta property="og:title" content="박서영 포트폴리오" />
+    <meta property="og:description" content="ParkSeoyoung_portfolio 메인페이지" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seokachu.github.io/main" />
+    <meta property="og:image" content="https://seokachu.github.io/main/images/main.png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- Custom CSS & JS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="script/main.js"></script>
 </head>
 <body>
+    <aside class="intro">
+        <div class="container">
+            <div class="split-screen"></div>
+            <div class="bg"></div>
+            <div class="content">
+                <p>I'm Front-End<span>,</span></p> 
+                <p>Developer</p>
+            </div>
+        </div>
+    </aside>
+    <header>
+        <div class="header-inner">
+            <h1 class="logo" title="SeoyoungPark portfolio">
+                <a href="index.html">
+                    <i class="bi bi-code-slash"></i> 
+                    <span>Seoyoung Park</span>
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="">About Me</a></li>
+                    <li><a href="">Project</a></li>
+                    <li><a href="">Study</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <main>
-        <h1>Seoyoung Park Portfolio</h1>
+        <section class="main-page">
+            <h1>I'm Front-End Developer</h1>
+        </section>
+        <div id="effect-container">
+            <!-- <div class="symbols">&#10059;</div> -->
+        </div>
     </main>
-    <div id="effect-container" title="click anywhere to remove effect">
-        <!-- <div class="symbols">&#10059;</div> -->
-    </div>
-    <script src="./main.js"></script>
+   
 </body>
 </html>

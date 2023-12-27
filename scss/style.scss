@@ -1,0 +1,207 @@
+/* Import Local SCSS Files */
+@import "reset", "variables", "fonts", "common";
+
+/*------------- MAIN -----------*/
+/* aside */
+.intro {
+    overflow: hidden;
+    font-family: $intro-font;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    .container{
+        width: 100%;
+        height: 100vh;
+        background-color: #b1bcbf;
+        position: relative;
+        animation: fadeOutUp 2s 5s forwards;
+        .split-screen{
+            width: 100%;
+            background-color: #e5e5e5;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 2;
+            animation: 
+                reduceSize 1.5s 0.5s forwards,
+                moveRight 1.5s 3s forwards;
+        }
+        .bg{
+            width: 50%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url(../images/main_bg.jpg);
+            background-size: cover;
+        }
+        .content{
+            color: $white;
+            font-size: 5vw;
+            text-transform: uppercase;
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 4;
+            opacity: 0;
+            margin: auto;
+            transform: translateY(100vh);
+            animation: 
+                fadeInUp 2s 0.5s,
+                moveRight 1.5s 3s,
+                changeBG 1.5s 3s;
+            animation-fill-mode: forwards;
+            p{
+                margin: 0;
+                span{
+                    color: #e5e5e5;
+                    opacity: 1;
+                    animation: fadeOut 0.5s 2.5s forwards;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+/* header */
+header {
+    box-shadow: 1px 0 1px rgba(0,0,0,255);
+    background-color: $white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    .header-inner {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        .logo {
+            a{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 20px;
+                .bi{
+                    font-size: 32px;
+                    font-weight: bold;
+                }
+            }
+        }
+        nav {
+        margin-left: auto;
+        ul {
+            display: flex;
+            gap: 20px;
+            li{
+                white-space: nowrap; 
+            }
+        }
+        }
+    }
+}
+
+/* main-page */
+main{
+    background: url(../images/main_bg.jpg) center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    .main-page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $main-page-font;
+        height: 100vh;
+        font-size: 34px;
+        h1{
+            color: $white;
+            z-index: 1;
+        }
+    }
+    #effect-container{
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        width: 100%;
+        transition: opacity 0.5s;
+        overflow: hidden;
+        .symbols{
+            position: absolute;
+            color: $white;
+            opacity: 0.3;
+            animation: fall ease-in infinite, sway ease-in-out infinite;
+        }
+    }
+}
+
+
+
+/* animation */
+@keyframes fall{
+    0%{ opacity: 0; }
+    50%{ opacity: 1; }
+    100%{ top: 100vh; }
+} 
+
+@keyframes sway{
+    0%{ margin-left: 0; }
+    25%{ margin-left: 50px; }
+    50%{ margin-left: -50px; }
+    75%{ margin-left: 50px; }
+    100%{ margin-left: 0; }
+}
+
+/* aside ani */
+@keyframes reduceSize{
+    from{ width: 100%; }
+    to{ width: 50%; }
+}
+
+@keyframes moveRight{
+    from{ left: 0%; }
+    to{ left: 50%; }
+}
+
+@keyframes fadeInUp{
+    from{ 
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes changeBG{
+    to{
+        background-image: url(../images/main_bg.jpg);
+        background-size: 200%;
+        background-position: right center;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+@keyframes fadeOut{
+    from { opacity: 1;}
+    to { opacity: 0; }
+}
+
+@keyframes fadeOutUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100vh); }
+}
+
